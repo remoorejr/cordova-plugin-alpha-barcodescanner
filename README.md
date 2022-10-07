@@ -1,27 +1,21 @@
-# PhoneGap Plugin BarcodeScanner
+# Cordova Plugin Alpha BarcodeScanner
+
 ================================
 
-[![Build Status](https://travis-ci.org/phonegap/phonegap-plugin-barcodescanner.svg)](https://travis-ci.org/phonegap/phonegap-plugin-barcodescanner)
-
-Cross-platform BarcodeScanner for Cordova / PhoneGap.
+Cross-platform BarcodeScanner for Cordova. This is a fork of phonegap-plugin-barcodescanner. Code has been revised to load with Cordova Android 11.
 
 Follows the [Cordova Plugin spec](https://cordova.apache.org/docs/en/latest/plugin_ref/spec.html), so that it works with [Plugman](https://github.com/apache/cordova-plugman).
 
 ## Installation
 
-
 This requires phonegap 7.1.0+ ( current stable v8.0.0 )
 
-    phonegap plugin add phonegap-plugin-barcodescanner
+    phonegap plugin add cordova-plugin-alpha-barcodescanner
 
 It is also possible to install via repo url directly ( unstable )
 
-    phonegap plugin add https://github.com/phonegap/phonegap-plugin-barcodescanner.git
+    phonegap plugin add https://github.com/remoorejr/cordova-plugin-alpha-barcodescanner.git
 
-Optional variables:
-This plugin requires the Android support library v4. The minimum version is `24.1.0`. Default value is `27.+`.  Check out the latest version [here](https://developer.android.com/topic/libraries/support-library/revisions.html).
-```
-phonegap plugin add phonegap-plugin-barcodescanner --variable ANDROID_SUPPORT_V4_VERSION="27.1.1"
 ```
 ### Supported Platforms
 
@@ -38,21 +32,10 @@ committed with an updated jar.
 Note: Windows 10 applications can not be build for `AnyCPU` architecture, which is default for Windows platform. If you want to build/run Windows 10 app, you should specify target architecture explicitly, for example (Cordova CLI):
 
 ```
+
 cordova run windows -- --archs=x86
-```
 
-### PhoneGap Build Usage
-
-Add the following to your config.xml:
-
-```
-<!-- add a version here, otherwise PGB will use whatever the latest version of the package on npm is -->
-<plugin name="phonegap-plugin-barcodescanner" />
-```
-On PhoneGap Build if you're using a version of cordova-android of 4 or less, ensure you're building with gradle:
-```
-<preference name="android-build-tool" value="gradle" />
-```
+````
 
 ## Using the plugin ##
 The plugin creates the object `cordova.plugins.barcodeScanner` with the method `scan(success, fail)`.
@@ -106,18 +89,18 @@ A full example could be:
           disableSuccessBeep: false // iOS and Android
       }
    );
-```
+````
 
-## Encoding a Barcode ##
+## Encoding a Barcode
 
 The plugin creates the object `cordova.plugins.barcodeScanner` with the method `encode(type, data, success, fail)`.
 
 Supported encoding types:
 
-* TEXT_TYPE
-* EMAIL_TYPE
-* PHONE_TYPE
-* SMS_TYPE
+-   TEXT_TYPE
+-   EMAIL_TYPE
+-   PHONE_TYPE
+-   SMS_TYPE
 
 ```
 A full example could be:
@@ -130,7 +113,7 @@ A full example could be:
         );
 ```
 
-## iOS quirks ##
+## iOS quirks
 
 Since iOS 10 it's mandatory to add a `NSCameraUsageDescription` in the `Info.plist`.
 
@@ -145,18 +128,18 @@ To add this entry you can use the `edit-config` tag in the `config.xml` like thi
 </edit-config>
 ```
 
-## Windows quirks ##
+## Windows quirks
 
-* Windows implementation currently doesn't support encode functionality.
+-   Windows implementation currently doesn't support encode functionality.
 
-* On Windows 10 desktop ensure that you have Windows Media Player and Media Feature pack installed.
+-   On Windows 10 desktop ensure that you have Windows Media Player and Media Feature pack installed.
 
-## Thanks on Github ##
+## Thanks on Github
 
-So many -- check out the original [iOS](https://github.com/phonegap/phonegap-plugins/tree/DEPRECATED/iOS/BarcodeScanner),  [Android](https://github.com/phonegap/phonegap-plugins/tree/DEPRECATED/Android/BarcodeScanner) and
+So many -- check out the original [iOS](https://github.com/phonegap/phonegap-plugins/tree/DEPRECATED/iOS/BarcodeScanner), [Android](https://github.com/phonegap/phonegap-plugins/tree/DEPRECATED/Android/BarcodeScanner) and
 [BlackBerry 10](https://github.com/blackberry/WebWorks-Community-APIs/tree/master/BB10-Cordova/BarcodeScanner) repos.
 
-## Licence ##
+## Licence
 
 The MIT License
 
