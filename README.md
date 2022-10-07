@@ -8,11 +8,11 @@ Follows the [Cordova Plugin spec](https://cordova.apache.org/docs/en/latest/plug
 
 ## Installation
 
-This requires phonegap 7.1.0+ ( current stable v8.0.0 )
+This version requires Cordova 11.x.x or greater and Cordova Android 11.x.x or greater.
 
     phonegap plugin add cordova-plugin-alpha-barcodescanner
 
-It is also possible to install via repo url directly ( unstable )
+It is also possible to install via repo url directly
 
     phonegap plugin add https://github.com/remoorejr/cordova-plugin-alpha-barcodescanner.git
 
